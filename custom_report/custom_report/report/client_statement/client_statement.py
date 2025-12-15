@@ -87,4 +87,8 @@ def get_conditions(filters):
         conditions += " AND order_type = %(order_type)s"
         values["order_type"] = filters.get("order_type")
 
+    if filters.get("company"):
+        conditions += " AND company = %(company)s"
+        values["company"] = filters.get("company")
+
     return conditions, values
